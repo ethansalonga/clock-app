@@ -16,6 +16,35 @@
   font-size: 24px;
 }
 
+.handle {
+  position: absolute;
+  width: 8px;
+  height: 200px;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 50%;
+  background-color: black;
+  transform-origin: bottom;
+}
+
+.handle__second {
+  background-color: red;
+  width: 1px;
+  height: 220px;
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.handle__hour {
+  width: 4px;
+  height: 100px;
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.handle__minute {
+  width: 2px;
+  height: 200px;
+}
+
 .number:nth-of-type(1) {
   transform: rotate(30deg);
 }
