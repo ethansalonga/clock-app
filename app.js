@@ -22,9 +22,12 @@ function setHands() {
   const extraSecondsAngle = millis * 0.006
   const secondsAngle = seconds * 6 + extraSecondsAngle
 
+  const millisAngle = millis * 360 / 1000
+
   hourHand.style.transform = `translateX(-50%) rotate(${hoursAngle}deg)`
   minuteHand.style.transform = `translateX(-50%) rotate(${minutesAngle}deg)`
   secondHand.style.transform = `translateX(-50%) rotate(${secondsAngle}deg)`
-  millisHand.style.transform = `translateX(-50%) rotate(${360 * millis / 1000}deg)`
+  millisHand.style.transform = `translateX(-50%) rotate(${millisAngle}deg)`
+
   requestAnimationFrame(setHands)
 }
