@@ -3,6 +3,8 @@ const minuteHand = document.querySelector(".handle__minute")
 const secondHand = document.querySelector(".handle__second")
 const millisHand = document.querySelector(".handle__millisecond")
 
+requestAnimationFrame(setHands)
+
 function setHands() {
   const d = new Date()
 
@@ -11,10 +13,12 @@ function setHands() {
   const seconds = d.getSeconds()
   const millis = d.getMilliseconds()
 
+  const extraSecondsAngle = millis * 0.006
+  const secondsAngle = seconds * 6 + extraSecondsAngle
+
   hourHand.style.transform = `translateX(-50%) rotate(${hours * 30}deg)`
   minuteHand.style.transform = `translateX(-50%) rotate(${minutes * 6}deg)`
-  secondHand.style.transform = `translateX(-50%) rotate(${seconds * 6}deg)`
-  millisHand.style.transform = `translateX(-50%) rotate(${millis * 0.006}deg)`
+  secondHand.style.transform = `translateX(-50%) rotate(${secondsAngle}deg)`
+  millisHand.style.transform = `translateX(-50%) rotate(${360 * millis / 1000}deg)`
+  requestAnimationFrame(setHands)
 }
-
-setHands()
