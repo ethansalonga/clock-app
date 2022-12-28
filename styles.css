@@ -27,6 +27,13 @@
   transform-origin: bottom;
 }
 
+.handle__millisecond {
+  background-color: green;
+  width: 1px;
+  height: 220px;
+  transform: translateX(-50%) rotate(90deg);
+}
+
 .handle__second {
   background-color: red;
   width: 1px;
